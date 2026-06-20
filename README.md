@@ -1,1 +1,1 @@
-# Digital Library and Book Reservation System
+# Étagère: Digital Library and Book Reservation System
