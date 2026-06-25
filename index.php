@@ -30,7 +30,7 @@
                     <div class="title">Continue Reading</div>
                     <script>
                         document.getElementById("continue_reading_container").innerHTML += `
-                        <div class="container_row">    
+                        <div class="container_row">
                             <div class="inner_container" onclick="window.location.href='bookdetail.php'">
                                     <img src="images/sample_book_cover.png" width="120" height="192">
                                     <p>Sample Book Name</p>
@@ -80,9 +80,9 @@
                             `
                         }
                     </script>
-                </div>       
-            </div>    
-        
+                </div>
+            </div>
+
 
             <div class="container_column" style="width: 30%;">
 

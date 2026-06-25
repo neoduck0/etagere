@@ -40,7 +40,7 @@
                 <span><button type="submit" class="login_button" onclick="window.location.href='index.php'">Login</button></span>
             </div>
         </div>
-    
+
     </main>
     <footer>
         <p>&copy; 2026 Etagere Library Management System. All rights reserved.</p>
