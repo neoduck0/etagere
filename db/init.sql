@@ -43,3 +43,14 @@ CREATE TABLE book_genres (
     FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
     FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE
 );
+
+CREATE TABLE ratings (
+    book_id INT NOT NULL,
+    user_id INT NOT NULL,
+    rating INT NOT NULL,
+    review VARCHAR(500),
+
+    PRIMARY KEY(book_id, user_id),
+    FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
