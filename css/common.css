@@ -5,23 +5,38 @@
     --font-body: "Source Sans 3", sans-serif;
 
     --bg: #f5f0e8;
-    --bg-surface: #ede7dc;
-    --bg-hover: #e5ddd0;
+    --bg-subtle: #ede7dc;
+    --bg-muted: #e5ddd0;
+    --bg-elevated: #f9f3ea;
+    --bg-elevated-soft: #faf5ed;
+    --bg-field: #fdf8f1;
+    --bg-emphasis: #f2e7d7;
+    --bg-selected: #e6dac5;
 
     --fg: #2c2420;
+    --fg-emphasis: #594126;
     --fg-muted: #7d7169;
-    --fg-light: #a89a8e;
-
-    --success: #5b8c5a;
-    --info: #5b7fa5;
-    --danger: #b84a42;
+    --fg-subtle: #a89a8e;
 
     --border: #d4c9b8;
     --border-light: #e2d9cb;
+    --border-active: #d8c3a2;
 
     --accent: #d4a24e;
     --accent-light: #e2bc76;
     --accent-dark: #b8892e;
+    --accent-ink: #5f461f;
+    --accent-ink-strong: #3d2c10;
+    --accent-border: #be903b;
+
+    --success-bg: #deebdd;
+    --success-fg: #2d5e2d;
+
+    --warning-bg: #f2e6c8;
+    --warning-fg: #6f591f;
+
+    --danger-bg: #f2d8d5;
+    --danger-fg: #853931;
 
     --radius-sm: 4px;
     --radius-md: 8px;
