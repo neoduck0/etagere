@@ -1,15 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Playfair+Display:wght@400;600;700&display=swap");
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    max-width: 1200px;
-}
-
 :root {
     --font-heading: "Playfair Display", serif;
     --font-body: "Lora", serif;
@@ -42,4 +32,14 @@ body {
     --shadow-sm: 0 1px 3px #2c242014;
     --shadow-md: 0 4px 6px #2c24201a;
     --shadow-lg: 0 10px 25px #2c24201f;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    max-width: 1200px;
 }
