@@ -19,12 +19,19 @@ try {
 }
 
 /*
- * This function retrieves a user from the database by their email.
- * It returns an associative array representing the user if found, or null if not found.
+ * Retrieves a user from the database by their email.
+ *
+ * Returns an associative array representing the user if found, or null if not found.
+ *
  * Throws a RuntimeException if the query fails.
  */
-function get_user(mysqli $conn, string $email): ?array
+function get_user(string $email): ?array
 {
+    global $conn;
+    if (!($conn instanceof mysqli)) {
+        throw new RuntimeException("Database connection is not established");
+    }
+
     $query = "SELECT * FROM users WHERE email = ? LIMIT 1";
 
     $stmt = mysqli_prepare($conn, $query);
