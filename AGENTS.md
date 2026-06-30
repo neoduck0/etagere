@@ -17,7 +17,9 @@ This file documents guidance for coding agents working in this repository.
 
 ## PHP Standards
 - All PHP files must include `declare(strict_types=1)`.
-- Any newly created PHP function must include a short description of what it does.
+- Any newly created PHP function must include a short description that states what it does.
+- If a function throws, its description must list the exact throw type(s).
+- All return types must be listed as bullet points.
 - Syntax must be checked for PHP changes (for example, `php -l`).
 
 ## Form Security

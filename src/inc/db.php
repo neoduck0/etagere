@@ -19,11 +19,14 @@ try {
 }
 
 /*
- * Retrieves a user from the database by their email.
+ * Retrieves a user record from the database by email.
  *
- * Returns an associative array representing the user if found, or null if not found.
+ * Throws:
+ * - RuntimeException: If the database connection is unavailable or a statement step fails.
  *
- * Throws a RuntimeException if the query fails.
+ * Return types:
+ * - array: The user row when a matching email is found.
+ * - null: When no matching user is found.
  */
 function get_user(string $email): ?array
 {
