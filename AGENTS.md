@@ -15,6 +15,21 @@ This file documents guidance for coding agents working in this repository.
 ## Safety
 - Avoid destructive changes outside the requested scope.
 
+## PHP Standards
+- All PHP files must include `declare(strict_types=1)`.
+- Any newly created PHP function must include a short description of what it does.
+- Syntax must be checked for PHP changes (for example, `php -l`).
+
+## Form Security
+- All forms must include a CSRF token.
+
+## JS/CSS Separation
+- Do not use inline JavaScript or inline CSS in `.php`/`.html` files.
+- JavaScript and CSS must live in separate files and be linked from templates.
+
+## JavaScript Standards
+- All DOM/document queries in JavaScript files must use jQuery selectors and APIs.
+
 ## CSS Standards
 - Use only `px` units for text sizes (for example, `font-size`).
 - For non-text sizing, `%` and viewport-relative units are allowed.
