@@ -59,10 +59,20 @@
     font: inherit;
     min-height: 42px;
     padding: 10px 12px;
+    outline: 2px solid transparent;
+    outline-offset: -1px;
 }
 
 .login-form input::placeholder {
     color: var(--fg-subtle);
+}
+
+.login-form input.good {
+    outline-color: var(--success);
+}
+
+.login-form input.bad {
+    outline-color: var(--danger);
 }
 
 .login-form input:focus-visible {

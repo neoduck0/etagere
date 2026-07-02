@@ -21,12 +21,15 @@ function updateLoginButton() {
 $("#email").on("input", function () {
     let value = $(this).val();
 
-    if (value === "") {
-        $(this).css("outline-color", "");
-    } else if (!validateEmail(value)) {
-        $(this).css("outline-color", "var(--danger)");
-    } else {
-        $(this).css("outline-color", "var(--success)");
+    $(this).removeClass("good");
+    $(this).removeClass("bad");
+
+    if (value !== "") {
+        if (validateEmail(value)) {
+            $(this).addClass("good");
+        } else {
+            $(this).addClass("bad");
+        }
     }
     updateLoginButton();
 });
@@ -34,12 +37,15 @@ $("#email").on("input", function () {
 $("#password").on("input", function () {
     let value = $(this).val();
 
-    if (value === "") {
-        $(this).css("outline-color", "");
-    } else if (!validatePassword(value)) {
-        $(this).css("outline-color", "var(--danger)");
-    } else {
-        $(this).css("outline-color", "var(--success)");
+    $(this).removeClass("good");
+    $(this).removeClass("bad");
+
+    if (value !== "") {
+        if (validatePassword(value)) {
+            $(this).addClass("good");
+        } else {
+            $(this).addClass("bad");
+        }
     }
     updateLoginButton();
 });
