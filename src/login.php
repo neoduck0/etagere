@@ -7,11 +7,12 @@ require_once "inc/helpers.php";
 
 session_start();
 
+$error = null;
+$email = "";
+
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     goto render_page;
 }
-
-$error = null;
 
 $email = trim($_POST["email"] ?? "");
 $password = $_POST["password"] ?? "";
@@ -83,7 +84,14 @@ render_page:
                     <input type="hidden" name="csrf_token" class="good" value="<?= generate_csrf_token() ?>">
 
                     <label class="auth-label" for="email">Email</label>
-                    <input id="email" placeholder="Enter your email" type="email" name="email" required>
+                    <input
+                        id="email"
+                        placeholder="Enter your email"
+                        type="email"
+                        name="email"
+                        value="<?= htmlspecialchars($email) ?>"
+                        required
+                    >
 
                     <label class="auth-label" for="password">Password</label>
                     <input id="password" placeholder="Enter your password" type="password" name="password" required>
