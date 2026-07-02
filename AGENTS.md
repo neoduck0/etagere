@@ -32,6 +32,7 @@ This file documents guidance for coding agents working in this repository.
 ## HTML Accessibility Attributes
 - Do not use ARIA attributes in HTML.
 - Do not use `role` attributes in HTML.
+- Do not add `alt` attributes in HTML.
 
 ## JavaScript Standards
 - All DOM/document queries in JavaScript files must use jQuery selectors and APIs.
