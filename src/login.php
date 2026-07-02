@@ -65,33 +65,33 @@ render_page:
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Etagere: Login</title>
         <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/auth.css">
     </head>
-    <body class="login-page">
-        <main class="login-shell">
-            <section class="login-card">
+    <body class="auth-page">
+        <main class="auth-shell">
+            <section class="auth-card">
                 <h1 id="login-heading">Welcome back</h1>
-                <p class="login-subtitle">Log in to continue to Etagere.</p>
+                <p class="auth-subtitle">Log in to continue to Etagere.</p>
 
                 <?php if (isset($error) && $error !== null): ?>
-                <p class="login-error">
+                <p class="auth-error">
                     <?= htmlspecialchars($error) ?>
                 </p>
                 <?php endif; ?>
 
-                <form method="post" class="login-form">
+                <form method="post" class="auth-form">
                     <input type="hidden" name="csrf_token" value="<?= generate_csrf_token() ?>">
 
-                    <label class="login-label" for="email">Email</label>
+                    <label class="auth-label" for="email">Email</label>
                     <input id="email" placeholder="Enter your email" type="email" name="email" required>
 
-                    <label class="login-label" for="password">Password</label>
+                    <label class="auth-label" for="password">Password</label>
                     <input id="password" placeholder="Enter your password" type="password" name="password" required>
 
                     <button type="submit">Log in</button>
                 </form>
 
-                <p class="login-footer">
+                <p class="auth-footer">
                     New here? <a href="register.php">Create an account</a>
                 </p>
             </section>

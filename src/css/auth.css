@@ -1,4 +1,4 @@
-.login-page {
+.auth-page {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,12 +6,12 @@
     color: var(--fg);
 }
 
-.login-shell {
+.auth-shell {
     width: 100%;
     max-width: 440px;
 }
 
-.login-card {
+.auth-card {
     background: var(--bg-elevated);
     border: 1px solid var(--border-light);
     border-radius: var(--radius-xl);
@@ -19,18 +19,18 @@
     padding: 32px;
 }
 
-.login-card h1 {
+.auth-card h1 {
     color: var(--fg-emphasis);
     font-size: 30px;
     margin-bottom: 6px;
 }
 
-.login-subtitle {
+.auth-subtitle {
     color: var(--fg-muted);
     margin-bottom: 24px;
 }
 
-.login-error {
+.auth-error {
     background: var(--danger-bg);
     border: 1px solid var(--danger-fg);
     border-radius: var(--radius-md);
@@ -39,19 +39,19 @@
     padding: 11px 13px;
 }
 
-.login-form {
+.auth-form {
     display: flex;
     flex-direction: column;
     gap: 11px;
 }
 
-.login-label {
+.auth-label {
     color: var(--fg-emphasis);
     font-size: 15px;
     font-weight: 600;
 }
 
-.login-form input {
+.auth-form input {
     background: var(--bg-field);
     border: 1px solid var(--border);
     border-radius: var(--radius-md);
@@ -63,23 +63,23 @@
     outline-offset: -1px;
 }
 
-.login-form input::placeholder {
+.auth-form input::placeholder {
     color: var(--fg-subtle);
 }
 
-.login-form input.good {
+.auth-form input.good {
     outline-color: var(--success);
 }
 
-.login-form input.bad {
+.auth-form input.bad {
     outline-color: var(--danger);
 }
 
-.login-form input:focus-visible {
+.auth-form input:focus-visible {
     outline-color: var(--accent);
 }
 
-.login-form button {
+.auth-form button {
     background: var(--accent);
     border: 1px solid var(--accent-border);
     border-radius: var(--radius-md);
@@ -90,26 +90,26 @@
     min-height: 43px;
 }
 
-.login-form button:hover {
+.auth-form button:hover {
     filter: brightness(105%);
     box-shadow: var(--shadow-sm);
 }
 
-.login-form button:active:not(:disabled) {
+.auth-form button:active:not(:disabled) {
     transform: translateY(1px);
 }
 
-.login-form button:disabled {
+.auth-form button:disabled {
     opacity: 0.8;
 }
 
-.login-footer {
+.auth-footer {
     color: var(--fg-muted);
     margin-top: 18px;
     text-align: center;
 }
 
-.login-footer a {
+.auth-footer a {
     color: var(--fg-emphasis);
     font-weight: 700;
     text-decoration: underline;
@@ -117,16 +117,16 @@
     text-underline-offset: 2px;
 }
 
-.login-footer a:hover {
+.auth-footer a:hover {
     color: var(--accent-dark);
 }
 
 @media (max-width: 480px) {
-    .login-card {
+    .auth-card {
         padding: 22px;
     }
 
-    .login-card h1 {
+    .auth-card h1 {
         font-size: 26px;
     }
 }
