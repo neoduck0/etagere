@@ -29,6 +29,10 @@ This file documents guidance for coding agents working in this repository.
 - Do not use inline JavaScript or inline CSS in `.php`/`.html` files.
 - JavaScript and CSS must live in separate files and be linked from templates.
 
+## HTML Accessibility Attributes
+- Do not use ARIA attributes in HTML.
+- Do not use `role` attributes in HTML.
+
 ## JavaScript Standards
 - All DOM/document queries in JavaScript files must use jQuery selectors and APIs.
 
