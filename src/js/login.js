@@ -46,4 +46,5 @@ $("#password").on("input", function () {
     });
 });
 
-updateLoginButton();
+$("#email").trigger("input");
+$("#password").trigger("input");
