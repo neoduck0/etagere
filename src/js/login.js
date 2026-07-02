@@ -1,17 +1,32 @@
-function validateEmail(email) {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-}
+function updateInput(element, checker) {
+    let value = element.val();
 
-function validatePassword(password) {
-    return password.length >= 8;
+    element.removeClass("good");
+    element.removeClass("bad");
+
+    if (value !== "") {
+        if (checker(value)) {
+            element.addClass("good");
+        } else {
+            element.addClass("bad");
+        }
+    }
+
+    updateLoginButton();
 }
 
 function updateLoginButton() {
-    if (
-        validateEmail($("#email").val()) &&
-        validatePassword($("#password").val())
-    ) {
+    let valid = true;
+
+    $("input").each(function () {
+        if ($(this).hasClass("bad")) {
+            valid = false;
+        } else if (!$(this).hasClass("good")) {
+            valid = false;
+        }
+    });
+
+    if (valid) {
         $("button[type='submit']").prop("disabled", false);
     } else {
         $("button[type='submit']").prop("disabled", true);
@@ -19,35 +34,16 @@ function updateLoginButton() {
 }
 
 $("#email").on("input", function () {
-    let value = $(this).val();
-
-    $(this).removeClass("good");
-    $(this).removeClass("bad");
-
-    if (value !== "") {
-        if (validateEmail(value)) {
-            $(this).addClass("good");
-        } else {
-            $(this).addClass("bad");
-        }
-    }
-    updateLoginButton();
+    updateInput($(this), (value) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(value);
+    });
 });
 
 $("#password").on("input", function () {
-    let value = $(this).val();
-
-    $(this).removeClass("good");
-    $(this).removeClass("bad");
-
-    if (value !== "") {
-        if (validatePassword(value)) {
-            $(this).addClass("good");
-        } else {
-            $(this).addClass("bad");
-        }
-    }
-    updateLoginButton();
+    updateInput($(this), (value) => {
+        return value.length >= 8;
+    });
 });
 
 updateLoginButton();

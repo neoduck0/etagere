@@ -80,7 +80,7 @@ render_page:
                 <?php endif; ?>
 
                 <form method="post" class="auth-form">
-                    <input type="hidden" name="csrf_token" value="<?= generate_csrf_token() ?>">
+                    <input type="hidden" name="csrf_token" class="good" value="<?= generate_csrf_token() ?>">
 
                     <label class="auth-label" for="email">Email</label>
                     <input id="email" placeholder="Enter your email" type="email" name="email" required>
