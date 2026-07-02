@@ -65,3 +65,58 @@ function get_user(string $email): ?array
         mysqli_stmt_close($stmt);
     }
 }
+
+/*
+ * Creates a user record in the database.
+ *
+ * Throws:
+ * - RuntimeException: If the database connection is unavailable or a statement step fails.
+ *
+ * Return types:
+ * - bool: True when the user row is inserted.
+ * - bool: False when no row is inserted.
+ */
+function create_user(
+    string $first_name,
+    string $last_name,
+    string $email,
+    string $password_hash,
+    bool $is_admin = false,
+): bool {
+    global $conn;
+    if (!($conn instanceof mysqli)) {
+        throw new RuntimeException("Database connection is not established");
+    }
+
+    $query = "INSERT INTO users (first_name, last_name, email, password_hash, is_admin)
+        VALUES (?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($conn, $query);
+    if ($stmt === false) {
+        throw new RuntimeException("Failed to prepare statement");
+    }
+
+    try {
+        if (
+            mysqli_stmt_bind_param(
+                $stmt,
+                "ssssi",
+                $first_name,
+                $last_name,
+                $email,
+                $password_hash,
+                $is_admin,
+            ) === false
+        ) {
+            throw new RuntimeException("Failed to bind parameters");
+        }
+
+        if (mysqli_stmt_execute($stmt) === false) {
+            throw new RuntimeException("Failed to execute statement");
+        }
+
+        return mysqli_stmt_affected_rows($stmt) > 0;
+    } finally {
+        mysqli_stmt_close($stmt);
+    }
+}
