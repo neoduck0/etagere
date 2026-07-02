@@ -74,7 +74,7 @@ render_page:
                 <p class="login-subtitle">Log in to continue to Etagere.</p>
 
                 <?php if (isset($error) && $error !== null): ?>
-                <p class="login-error" role="alert">
+                <p class="login-error">
                     <?= htmlspecialchars($error) ?>
                 </p>
                 <?php endif; ?>
