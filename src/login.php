@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
 $error = null;
 
-$email = trim($_POST["email"]) ?? "";
+$email = trim($_POST["email"] ?? "");
 $password = $_POST["password"] ?? "";
 $csrf_token = $_POST["csrf_token"] ?? "";
 
