@@ -13,9 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
 $error = null;
 
-$email = $_POST["email"];
-$password = $_POST["password"];
-$csrf_token = $_POST["csrf_token"];
+$email = trim($_POST["email"]) ?? "";
+$password = $_POST["password"] ?? "";
+$csrf_token = $_POST["csrf_token"] ?? "";
 
 if (empty($email) || empty($password) || empty($csrf_token)) {
     $error = "Email and password are required";
